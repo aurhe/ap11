@@ -50,7 +50,9 @@ function Ap11() {
                     that.keyDown = true;
                     break;
                 default:
-                    that.car.firing = true;
+                    if (key.keyCode !== 32) { //spacebar causes problems when used at the same time as the directional keys
+                        that.car.firing = true;
+                    }
             }
         }
     });
@@ -77,7 +79,9 @@ function Ap11() {
                     that.keyDown = false;
                     break;
                 default:
-                    that.car.firing = false;
+                    if (key.keyCode !== 32) {
+                        that.car.firing = false;
+                    }
             }
         }
     });
